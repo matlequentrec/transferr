@@ -51,27 +51,27 @@ if(isset($_POST['submit'])){
 				 $destination = base64_encode(file_destination.'/'.$newfilename);
 				?>
 				<div class="notification success">
-					Success ! Your file are available here: <a href="download.php?file=<?php echo $destination; ?>">download.php?file=<?php echo $destination; ?></a>
+					Félicitations, nous avons bien reçu vos documents.
 				</div>
 				<?php
 			}else{
 				?>
 				<div class="notification error">
-					An error occured while trying to upload your file(s).
+					Nous avons rencontré une erreur lors du téléversement de vos documents.
 				</div>
 				<?php
 			}
 		}else{
 			?>
 			<div class="notification error">
-			Your file is too high/low.
+			La taille de votre fichier est trop grande ou petite.
 			</div>
 			<?php
 		}
 	}else{
 		?>
 		<div class="notification error">
-			Incorrect file format.
+			Le format de fichier est incorrect.
 		</div>
 		<?php
 	}
@@ -80,8 +80,8 @@ if(isset($_POST['submit'])){
 ?>
         <form method="post" action="" enctype="multipart/form-data">
 		  <input type="file" name="fileToUpload">
-		  <p>Drag your files here or click in this area - <?=sizeFormat($maxsize)?> Max</p>
-		  <button name="submit" type="submit">Upload</button>
+		  <p>Faites glisser vos fichiers dans la fenêtre ou cliquez ici - <?=sizeFormat($maxsize)?> Max</p>
+		  <button name="submit" type="submit">Envoyer</button>
 		  <ul>
         		<li>Supported files: <?= FILELIST; ?></li> 
         	</ul>
